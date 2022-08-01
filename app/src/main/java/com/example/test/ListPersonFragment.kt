@@ -9,9 +9,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.test.databinding.FragmentListPersonBinding
-import com.example.test.model.ClickListener
+import com.example.test.viewmodel.ClickListener
 import com.example.test.model.ModelJSONItem
-import com.example.test.model.RecyclerAdapter
+import com.example.test.viewmodel.RecyclerAdapter
 import com.example.test.viewmodel.TestViewModel
 
 
@@ -29,6 +29,7 @@ class ListPersonFragment : Fragment(), ClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getList(requireContext().applicationContext)
         viewModel.arrayPersons.observe(viewLifecycleOwner){
             createRC(it)
         }

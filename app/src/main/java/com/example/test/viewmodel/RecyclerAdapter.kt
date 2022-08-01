@@ -1,4 +1,4 @@
-package com.example.test.model
+package com.example.test.viewmodel
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.test.R
 import com.example.test.databinding.PersonElementBinding
+import com.example.test.model.ModelJSONItem
 
-class RecyclerAdapter(private val clickListener: ClickListener,private val context : Context) : RecyclerView.Adapter<RecyclerAdapter.PersonHolder>() {
+class RecyclerAdapter(private val clickListener: ClickListener, private val context : Context) : RecyclerView.Adapter<RecyclerAdapter.PersonHolder>() {
 
     private var persons = ArrayList<ModelJSONItem>()
 
